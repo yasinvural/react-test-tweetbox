@@ -1,0 +1,104 @@
+.js-tweetbox-container{
+    max-width: 500px;
+    min-width: 310px;
+    height: 200px;
+    border:1px solid black;
+    border-radius: 6px;
+    margin: 50px auto;
+    background-color: rgba(115, 221, 243, 0.56);
+}
+
+.js-tweetbox-container .js-tweetbox-header-container{
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 10px 0;
+    border-bottom: 2px solid #1786b1;
+    display: flex;
+}
+
+.js-tweetbox-container .js-tweetbox-header-container .js-tweetbox-header{
+    font-weight: bold;
+    font-family: sans-serif;
+    flex-grow : 1;
+    text-align: center;
+}
+
+.js-tweetbox-container .js-tweetbox-header-container .js-tweetbox-close{
+    width: 6%;
+    cursor: pointer;
+}
+
+.js-tweetbox-container .js-tweetbox-body-container{
+    width: 100%;
+    height:120px;
+}
+
+.js-tweetbox-container .js-tweetbox-body-container .js-textbox-container{
+    width: 100%;
+    padding: 10px 0;
+}
+
+.js-tweetbox-container .js-tweetbox-body-container .js-textbox-container input{
+    width: 95%;
+    border-radius: 6px;
+    /*height: 70px;*/
+    text-indent: 10px;
+    padding: 10px 0 65px 0;
+}
+
+.js-tweetbox-container .js-tweetbox-body-container .js-textbox-container input:focus{
+    box-shadow: 0 0 5px black;
+    /*border: 2px groove blue;*/
+    border-radius: 6px;
+    outline: none;
+}
+
+.js-tweetbox-container .js-tweetbox-body-container .js-textbox-container input::-webkit-input-placeholder{
+    padding: 0 5px;
+    position: relative;
+}
+
+.js-tweetbox-container .js-tweetbox-footer-container{
+    width: 100%;
+    display: flex;
+}
+
+.js-tweetbox-container .js-tweetbox-footer-container .js-left-container{
+    width: 50%;
+    float:left;
+}
+
+.js-tweetbox-container .js-tweetbox-footer-container .js-left-container .js-select-file-button{
+    float:left;
+    border-radius: 10%;
+    padding: 5px 15px;
+    margin-left: 15px;
+}
+
+.js-tweetbox-container .js-tweetbox-footer-container .js-right-container{
+    width: 50%;
+    float:right;
+}
+
+.js-tweetbox-container .js-tweetbox-footer-container .js-right-container .js-tweet-length{
+    padding: 5px 15px;
+    float:right;
+}
+
+.js-tweetbox-container .js-tweetbox-footer-container .js-right-container .js-tweet-button{
+    float:right;
+    border-radius: 12px;
+    padding: 5px 15px;
+    margin-right: 15px;
+    background-color: blue;
+    color:white;
+}
+
+.js-enabled{
+    cursor: pointer;
+}
+
+.js-disabled{
+    cursor:no-drop;
+    background-color:#ab9595 !important
+}
