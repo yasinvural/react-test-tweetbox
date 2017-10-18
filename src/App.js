@@ -9,42 +9,27 @@ class App extends Component {
       this.state={
           "defaultLengthOfTweet": 140,
           "tweetLength": 140,
-          "buttonClassName": "js-disabled",
-          "disabledTyping":false
+          "tweetText":"",
+          "disabledTyping":false,
+          "buttonClassName": "js-disabled"
       };
-
       this.handleChange = this.handleChange.bind(this);
-      this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
 
   handleChange = (e) =>{
-      var lengthOfTweet = e.target.value.length;  
-      this.setState({
-        "tweetLength": this.state.defaultLengthOfTweet-lengthOfTweet        
-      }, ()=>{
-        this.setState({
-          "buttonClassName": this.state.tweetLength < this.state.defaultLengthOfTweet ? "js-enabled" : "js-disabled"
-          // "disabledTyping": this.state.tweetLength === 0 ? true : false
-        });
-      });
-  }
+      var lengthOfTweet = e.target.value.length;
 
-  handleKeyDown(e){
-      // switch(e.keyCode){
-      //   case 8:
-      //     this.setState({
-      //       "disabledTyping": this.state.tweetLength === 0 ? true : false
-      //     })
-      //   break;
-      //   case 46:
-      //     this.setState({
-      //       "disabledTyping": this.state.tweetLength === 0 ? true : false
-      //     })
-      //   break;
-      //   default:
-
-      // }
+      if(lengthOfTweet <= this.state.defaultLengthOfTweet){
+            this.setState({
+              "tweetLength": this.state.defaultLengthOfTweet-lengthOfTweet,
+              "tweetText": e.target.value
+            }, ()=>{
+                  this.setState({
+                    "buttonClassName": this.state.tweetLength < this.state.defaultLengthOfTweet ? "js-enabled" : "js-disabled"
+                  });
+            });
+      }
   }
 
   render() {
@@ -57,7 +42,7 @@ class App extends Component {
         <TweetBox buttonClassName={this.state.buttonClassName}
                   disabled={this.state.disabledTyping}
                   tweetLength={this.state.tweetLength} 
-                  handleKeyDown={this.handleKeyDown}
+                  tweetText = {this.state.tweetText}
                   handleChange={this.handleChange} />
       </div>
     );

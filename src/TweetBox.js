@@ -12,12 +12,16 @@ export default class TweetBox extends Component {
                 </div>
                 <div className="js-tweetbox-body-container">
                     <div className="js-textbox-container">
-                        <input type="text" disabled={this.props.disabled} onKeyDown={this.props.handleKeyDown} onChange={this.props.handleChange} placeholder="Neler oluyor?" />
+                        <input  type="text" 
+                                placeholder="Neler oluyor?"
+                                value={this.props.tweetText} 
+                                disabled={this.props.disabled} 
+                                onChange={this.props.handleChange} />
                     </div>
                 </div>
                 <div className="js-tweetbox-footer-container">
                     <div className="js-left-container">
-                        <input type="button" className="js-select-file-button" value="Seç" />
+                        {/*<input type="button" className="js-select-file-button" value="Seç" />*/}
                     </div>
                     <div className="js-right-container">
                         <input type="button" className={`js-tweet-button ${this.props.buttonClassName}`} value="Tweetle" />                    
